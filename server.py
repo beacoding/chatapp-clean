@@ -21,7 +21,11 @@ def random_string():
 @app.route("/post_new_message", methods = ["POST"])
 def post_new_message():
 	print (request.form)
-	messages.append(request.form["msg"])
+	messages.append(request.form)
+	return json.dumps(messages)
+
+@app.route("/get_all_messages")
+def get_message():
 	return json.dumps(messages)
 
 
