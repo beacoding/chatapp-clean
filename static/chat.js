@@ -4,7 +4,7 @@ $( document ).ready(function() {
             data = JSON.parse(data);
             $("#messages").html("")
             data.forEach((x) =>  {
-                $("#messages").append(`<div>${x.user}: ${x.msg}</div>`)
+                 $("#messages").append(`<div><span class = "username">${x.user}</span>: ${x.msg}</div>`)
             });
         });
     }
@@ -31,7 +31,7 @@ $( document ).ready(function() {
             data.forEach((x) =>  {
                 console.log("This  is x:", x);
                 // we add a new div to the html elemenet with id messages
-                $("#messages").append(`<div>${x.user}: ${x.msg}</div>`)
+                $("#messages").append(`<div><span class = "username">${x.user}</span>: ${x.msg}</div>`)
             });
         }) 
     });
