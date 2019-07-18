@@ -1,3 +1,64 @@
 .username {
-	color:blue;
+	color:black;
+	font-weight:600;
+}
+
+#message-container {
+	overflow: none;
+	position: relative;
+	height: 500px;
+	margin-left:25px;
+	margin-right: 25px;
+	width:  85%;
+}
+
+#messages  {
+	max-height:410px;
+	overflow:  auto;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	margin-top: 40px;
+}
+
+input {
+	margin-left:15px;
+	border-radius:10px;
+	margin: 10px;
+}
+
+#colour {
+	margin-bottom:15px;
+}
+
+#container {
+	background-color:#cfece4;
+	box-shadow: 5px 10px #acc7c0;
+
+	margin:70px;
+}
+
+input:focus {
+	outline:none;
+}
+
+body {
+	font-family: 'Muli', sans-serif;
+}
+
+.text {
+	margin-left:5px;
+}
+
+.message {
+	background-color:white;
+	margin:5px;
+	padding:5px;
+	margin-right:10px;
+	border-radius:20px;
+}
+
+.title {
+	margin-left:40px;
+	padding-top:40px;
 }

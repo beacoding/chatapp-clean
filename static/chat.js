@@ -5,8 +5,10 @@ $( document ).ready(function() {
             $("#messages").html("")
             data.forEach((x) =>  {
                 var style = `${"'" + "color:" + x.colour + "'"}`;
-                $("#messages").append(`<div><span class = "username" style = ${style}> ${x.user}</span>: ${x.msg}</div>`)
+                $("#messages").append(`<div class = "message"><div class = "username" style = ${style}> ${x.user}</div> <div class = "text">${x.msg}</div></div>`)
             });
+            var cows = document.getElementById("messages");
+            cows.scrollTop = cows.scrollHeight;
         });
     }
     setInterval(function(){ fetchMessages() }, 1000);
@@ -26,6 +28,8 @@ $( document ).ready(function() {
         // give it the message and teh user who sent  it
         $.post("/post_new_message", {msg: msg, user:user, colour:colour}, function(data) {
             $("#messages").html("")
+            $("#chatbox").val("")
+
             // Server gives us back a JSON string. We have to parse it to
             // tturn it into a list
             data = JSON.parse(data);
@@ -34,8 +38,9 @@ $( document ).ready(function() {
                 console.log("This  is x:", x);
                 var style = `${"'" + "color:" + x.colour + "'"}`;
                 // we add a new div to the html elemenet with id messages
-                $("#messages").append(`<div><span class = "username" style = ${style}> ${x.user}</span>: ${x.msg}</div>`)
+                $("#messages").append(`<div class = "message"><div class = "username" style = ${style}> ${x.user}</div> <div class = "text" >${x.msg}</div></div>`)
             });
+
         }) 
     });
 });

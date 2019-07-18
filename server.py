@@ -14,10 +14,6 @@ def hello_world():
 def cows():
 	return render_template('cows.html')
 
-@app.route('/random_string')
-def random_string():
-	return "hello !"
-
 @app.route("/post_new_message", methods = ["POST"])
 def post_new_message():
 	print (request.form)
