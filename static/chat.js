@@ -4,7 +4,8 @@ $( document ).ready(function() {
             data = JSON.parse(data);
             $("#messages").html("")
             data.forEach((x) =>  {
-                 $("#messages").append(`<div><span class = "username">${x.user}</span>: ${x.msg}</div>`)
+                var style = `${"'" + "color:" + x.colour + "'"}`;
+                $("#messages").append(`<div><span class = "username" style = ${style}> ${x.user}</span>: ${x.msg}</div>`)
             });
         });
     }
@@ -20,9 +21,10 @@ $( document ).ready(function() {
     $("#formId").click(function(){
         var msg=$("#chatbox").val();
         var user=$("#username").val();
+        var colour=$("#colour").val();
         // Post a new message to the route /post_new_message and also 
         // give it the message and teh user who sent  it
-        $.post("/post_new_message", {msg: msg, user:user}, function(data) {
+        $.post("/post_new_message", {msg: msg, user:user, colour:colour}, function(data) {
             $("#messages").html("")
             // Server gives us back a JSON string. We have to parse it to
             // tturn it into a list
@@ -30,8 +32,9 @@ $( document ).ready(function() {
             // For loop over every single messagee to display user and message
             data.forEach((x) =>  {
                 console.log("This  is x:", x);
+                var style = `${"'" + "color:" + x.colour + "'"}`;
                 // we add a new div to the html elemenet with id messages
-                $("#messages").append(`<div><span class = "username">${x.user}</span>: ${x.msg}</div>`)
+                $("#messages").append(`<div><span class = "username" style = ${style}> ${x.user}</span>: ${x.msg}</div>`)
             });
         }) 
     });
