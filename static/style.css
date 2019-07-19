@@ -3,27 +3,51 @@
 	font-weight:600;
 }
 
+
 #message-container {
 	overflow: none;
 	position: relative;
-	height: 500px;
-	margin-left:25px;
-	margin-right: 25px;
-	width:  85%;
+	height: 436px;
+	margin-left:15px;
+	margin-bottom: -7px;
+	max-width: 82%;
+	
+}
+
+#inputs-container {
+	margin-right: 38px;
+	margin-left:115px;
+}
+
+#inputs {
+	max-width: 100%;
+	padding-left:  5px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	background-color: #bdbebd;
+}
+
+#inputs #chatbox{
+	max-width: 65%;
+	margin: 0;
+
 }
 
 #messages  {
-	max-height:410px;
+	max-height:400px;
 	overflow:  auto;
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	margin-top: 40px;
+	margin-top: 100px;
+	margin-left:100px;
+	background-color:#d2cfcf;
+
 }
 
 input {
 	margin-left:15px;
-	border-radius:10px;
+	border-radius:2px;
 	margin: 10px;
 }
 
@@ -32,10 +56,13 @@ input {
 }
 
 #container {
-	background-color:#cfece4;
-	box-shadow: 5px 10px #acc7c0;
-
-	margin:70px;
+	background-color:#bdbebd;
+	margin:100px;
+	background-image: url("windows.png");
+	background-repeat: no-repeat, repeat;
+	background-size: cover;
+	height: 700px;
+	width: 854px;
 }
 
 input:focus {
@@ -43,22 +70,50 @@ input:focus {
 }
 
 body {
-	font-family: 'Muli', sans-serif;
+	font-family: 'VT323', monospace;
+	background-color:white;
 }
 
 .text {
-	margin-left:5px;
+	margin-left:10px;
 }
 
 .message {
-	background-color:white;
-	margin:5px;
+	background-color:#bdbebd;
+	margin:0px;
 	padding:5px;
 	margin-right:10px;
-	border-radius:20px;
+	border-radius:1px;
+	box-shadow: inset -2px -2px grey;
+
+	border-bottom:2px solid black;	
+	border-right:2px solid black;
+	border-top:3px solid #f1f1f1;	
+	border-left:3px solid  #f1f1f1;	
+
+
 }
 
 .title {
 	margin-left:40px;
 	padding-top:40px;
+	font-family: 'Archivo Narrow', sans-serif;;
+}
+
+.userbox {
+	margin-left:100px;
+}
+
+form {
+	margin-top:50px;
+}
+
+#chatbox {
+	width: 80%;
+	margin-left:125px;
+
+}
+
+html {
+	background-color:white;
 }

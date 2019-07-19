@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+     var scrolledDown = false;
     function fetchMessages() {
         $.get( "/get_all_messages", function(data) {
             data = JSON.parse(data);
@@ -8,7 +9,10 @@ $( document ).ready(function() {
                 $("#messages").append(`<div class = "message"><div class = "username" style = ${style}> ${x.user}</div> <div class = "text">${x.msg}</div></div>`)
             });
             var cows = document.getElementById("messages");
-            cows.scrollTop = cows.scrollHeight;
+            if (scrolledDown === false) {
+                cows.scrollTop = cows.scrollHeight;
+                scrolledDown = true;
+            }
         });
     }
     setInterval(function(){ fetchMessages() }, 1000);
@@ -22,14 +26,13 @@ $( document ).ready(function() {
 
     $("#formId").click(function(){
         var msg=$("#chatbox").val();
-        var user=$("#username").val();
-        var colour=$("#colour").val();
+
         // Post a new message to the route /post_new_message and also 
-        // give it the message and teh user who sent  it
-        $.post("/post_new_message", {msg: msg, user:user, colour:colour}, function(data) {
+        // give it the message and the user who sent  it !!
+        $.post("/post_new_message", {msg: msg}, function(data) {
             $("#messages").html("")
             $("#chatbox").val("")
-
+            
             // Server gives us back a JSON string. We have to parse it to
             // tturn it into a list
             data = JSON.parse(data);
@@ -40,7 +43,9 @@ $( document ).ready(function() {
                 // we add a new div to the html elemenet with id messages
                 $("#messages").append(`<div class = "message"><div class = "username" style = ${style}> ${x.user}</div> <div class = "text" >${x.msg}</div></div>`)
             });
+            var cows = document.getElementById("messages");
 
+            cows.scrollTop = cows.scrollHeight;
         }) 
     });
 });
