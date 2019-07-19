@@ -30,6 +30,24 @@
 #inputs #chatbox{
 	max-width: 65%;
 	margin: 0;
+}
+
+#colour-palette {
+	position: absolute;
+	top: 683;
+	left: 165;
+}
+
+.colour-row  {
+	margin-bottom: 4px;
+}
+
+.cb {
+	display: inline-block;
+	width:  15px;
+	margin: 0  2px 0 4.5px;
+	height:15px;
+	cursor: pointer;
 
 }
 

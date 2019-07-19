@@ -16,6 +16,10 @@ def cows():
 def post_new_message():
 	username = request.cookies.get('username')
 	colour = request.cookies.get('colour')
+
+	if "colour"  in request.form:
+		colour = request.form["colour"]
+
 	form_inputs = dict(request.form)
 	form_inputs["user"] = username
 	form_inputs["colour"] = colour
