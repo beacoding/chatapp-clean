@@ -29,7 +29,7 @@ def post_new_message():
         messages.append(form_inputs)
         fp.seek(0)
         json.dump(messages, fp)
-        f.truncate()
+        fp.truncate()
     return json.dumps(messages)
 
 @app.route("/get_all_messages")
@@ -51,8 +51,6 @@ def login():
         resp.set_cookie('colour',colour)
         return resp
     return render_template('login.html')
-
-
 
 if __name__ == '__main__':
     app.run()
