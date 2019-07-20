@@ -3,7 +3,6 @@
 	font-weight:600;
 }
 
-
 #message-container {
 	overflow: none;
 	position: relative;
@@ -48,7 +47,6 @@
 	margin: 0  2px 0 4.5px;
 	height:15px;
 	cursor: pointer;
-
 }
 
 #messages  {
@@ -61,12 +59,6 @@
 	margin-left:100px;
 	background-color:#d2cfcf;
 
-}
-
-input {
-	margin-left:15px;
-	border-radius:2px;
-	margin: 10px;
 }
 
 #colour {
@@ -83,14 +75,6 @@ input {
 	width: 854px;
 }
 
-input:focus {
-	outline:none;
-}
-
-body {
-	font-family: 'VT323', monospace;
-	background-color:white;
-}
 
 .text {
 	margin-left:10px;
@@ -103,13 +87,10 @@ body {
 	margin-right:10px;
 	border-radius:1px;
 	box-shadow: inset -2px -2px grey;
-
 	border-bottom:2px solid black;	
 	border-right:2px solid black;
 	border-top:3px solid #f1f1f1;	
 	border-left:3px solid  #f1f1f1;	
-
-
 }
 
 .title {
@@ -122,16 +103,30 @@ body {
 	margin-left:100px;
 }
 
-form {
-	margin-top:50px;
-}
-
 #chatbox {
 	width: 80%;
 	margin-left:125px;
-
 }
 
 html {
 	background-color:white;
+}
+
+form {
+	margin-top:50px;
+}
+
+input:focus {
+	outline:none;
+}
+
+body {
+	font-family: 'VT323', monospace;
+	background-color:white;
+}
+
+input {
+	margin-left:15px;
+	border-radius:2px;
+	margin: 10px;
 }

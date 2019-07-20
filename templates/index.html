@@ -1,108 +1,46 @@
-<html>
 
-<head>
+<html>
+  <head>
     <title>cows !</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
-</head>
-
-<body>
-
-
-	<div id="container">
-			<div class = "title"><h2 > </h2></div>
-	<div id="message-container">
-
-    	<div id="messages"></div>
+  </head>
+  <body>
+    <div id="container">
+      <div class="title">
+        <h2> </h2>
+      </div>
+      <div id="message-container">
+        <div id="messages"></div>
+      </div>
+      <div id="inputs-container">
+        <div id="inputs">
+          <input placeholder="message" type="text" id="chatbox" autofocus />
+          <input id='formId' type='button' value='enter' />
+        </div>
+      </div>
     </div>
-    <div id="inputs-container">
-    <div id="inputs">
-
-
-    	<input placeholder="message" type="text" id="chatbox" autofocus />
-
-    	<input id='formId' type='button' value='enter' />
-
-
-    </div>
-
-</div>
-</div>
-
-<div id="colour-palette">
-    <div>
+    <div id="colour-palette">
+      <div>
         <div class="colour-row">
-            <div id="cb-1" class="cb">
-            </div>
-            <div id="cb-2" class="cb">
-            </div>
-            <div id="cb-3" class="cb">
-            </div>
-            <div id="cb-4" class="cb">
-            </div>
-            <div id="cb-5" class="cb">
-            </div>
-            <div id="cb-6" class="cb">
-            </div>
-            <div id="cb-7" class="cb">
-            </div>
-            <div id="cb-8" class="cb">
-            </div>
-            <div id="cb-9" class="cb">
-            </div>
-            <div id="cb-10" class="cb">
-            </div>
-            <div id="cb-11" class="cb">
-            </div>
-            <div id="cb-12" class="cb">
-            </div>
-            <div id="cb-13" class="cb">
-            </div>
-            <div id="cb-14" class="cb">
-            </div>
+          {% for i in range(1,15) %}
+            <div id={{'cb-'+ i|string}} class="cb"></div>
+          {% endfor %}
         </div>
         <div class="colour-row">
-            <div id="cb-15" class="cb">
-            </div>
-            <div id="cb-16" class="cb">
-            </div>
-            <div id="cb-17" class="cb">
-            </div>
-            <div id="cb-18" class="cb">
-            </div>
-            <div id="cb-19" class="cb">
-            </div>
-            <div id="cb-20" class="cb">
-            </div>
-            <div id="cb-21" class="cb">
-            </div>
-            <div id="cb-22" class="cb">
-            </div>
-            <div id="cb-23" class="cb">
-            </div>
-            <div id="cb-24" class="cb">
-            </div>
-            <div id="cb-25" class="cb">
-            </div>
-            <div id="cb-26" class="cb">
-            </div>
-            <div id="cb-27" class="cb">
-            </div>
-            <div id="cb-28" class="cb">
-            </div>
+          {% for i in range(15,29) %}
+            <div id={{'cb-'+ i|string}} class="cb"></div>
+          {% endfor %}
         </div>
+      </div>
     </div>
-</div>
-    <script src="chat.js">
-    </script>
-
-</body>
-
-</html>
+    <script src="chat.js"></script>
+  </body>
+</html
